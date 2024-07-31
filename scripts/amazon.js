@@ -1,5 +1,6 @@
-import { cart } from "../data/cart.js";
+import { cart, addToCart } from "../data/cart.js";
 import { products } from "../data/products.js";
+
 let productsHTML = "";
 products.forEach((products) => {
   productsHTML += `
@@ -31,7 +32,7 @@ products.forEach((products) => {
           )}</div>
 
           <div class="product-quantity-container">
-            <select>
+            <select class = 'js-quantity-selector-${products.id}'>
               <option selected value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -64,34 +65,27 @@ products.forEach((products) => {
 // console.log(productsHTML);
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
+// update Cart quantity
+function updateCartQuantity() {
+  let Quantity = 0;
+  cart.forEach((cartItem) => {
+    Quantity += cartItem.quantity;
+  });
+
+  document.querySelector(".js-cart-quantity").innerHTML = Quantity;
+}
+
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   let addedMessageTimeoutId;
 
   button.addEventListener("click", () => {
-    const productId = button.dataset.productId;
+    const { productId } = button.dataset;
 
-    let matchingItem;
+    addToCart(productId);
 
-    cart.forEach((item) => {
-      if (productId === item.productId) {
-        matchingItem = item;
-      }
-    });
-    if (matchingItem) {
-      matchingItem.quantity += 1;
-    } else {
-      cart.push({
-        productId: productId,
-        quantity: 1,
-      });
-    }
+    updateCartQuantity();
 
-    let Quantity = 0;
-    cart.forEach((item) => {
-      Quantity += item.quantity;
-    });
-
-    document.querySelector(".js-cart-quantity").innerHTML = Quantity;
+    // addedmessageTimeoId
 
     const addTocart = document.querySelector(`.js-added-to-cart-${productId}`);
 
