@@ -67,15 +67,13 @@ products.forEach((products) => {
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
 // update Cart quantity
-function updateCartQuantity() {
+export function updateCartQuantity() {
   let Quantity = 0;
   cart.forEach((cartItem) => {
     Quantity += cartItem.quantity;
   });
-
   document.querySelector(".js-cart-quantity").innerHTML = Quantity;
 }
-
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   let addedMessageTimeoutId;
 
