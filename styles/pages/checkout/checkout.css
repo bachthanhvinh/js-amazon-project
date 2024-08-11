@@ -210,22 +210,21 @@
   margin-bottom: 15px;
 }
 .quantity-input {
-  width: 30px;
-  border: 1px solid black;
+  width: 40px;
+  height: 20px;
+  border: 1px solid;
   display: none;
+  border-radius: 3px;
 }
 .is-editing-quantity {
-  .js-update-link,
-  .quantity-label {
-    display: none;
-  }
-  .quantity-input,
-  .save-quantity-link {
+  .save-quantity-link,
+  .quantity-input {
     display: initial;
   }
-}
-.is-save-link {
-  transition: 3s;
+  .quantity-label,
+  .js-update-link {
+    display: none;
+  }
 }
 .save-quantity-link {
   display: none;

@@ -469,4 +469,15 @@ export const products = [
     priceCents: 2400,
     keywords: ["sweaters", "hoodies", "apparel", "mens"],
   },
+  {
+    id: "vinh124",
+    image: "images/products/backpack.jpg",
+    name: "Waterproof Backpack",
+    rating: {
+      stars: 4.5,
+      count: 3157,
+    },
+    priceCents: 3999,
+    keywords: ["Backpack", "waterproof backpack "],
+  },
 ];

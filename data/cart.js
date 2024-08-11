@@ -1,4 +1,5 @@
 export let cart = JSON.parse(localStorage.getItem("cart"));
+
 if (!cart) {
   cart = [
     {
@@ -13,9 +14,11 @@ if (!cart) {
     },
   ];
 }
+
 function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+
 export function addToCart(productId) {
   let matchingItem;
   const quantityElement = document.querySelector(
@@ -39,7 +42,7 @@ export function addToCart(productId) {
   }
   saveToStorage();
 }
-export function removeFromcart(productId) {
+export function removeFromCart(productId) {
   const newCart = [];
 
   cart.forEach((cartItem) => {
@@ -47,40 +50,37 @@ export function removeFromcart(productId) {
       newCart.push(cartItem);
     }
   });
+
   cart = newCart;
+
   saveToStorage();
 }
 
-export function calculateCartQuantity(link) {
-  let Quantity = 0;
-  cart.forEach((CartItem) => {
-    Quantity += CartItem.quantity;
-  });
+export function calculateCartQuantity() {
+  let cartQuantity = 0;
 
-  if (link === ".js-return-to-home-link") {
-    document.querySelector(
-      ".js-return-to-home-link"
-    ).innerHTML = `${Quantity} item`;
-  } else if (link === ".js-cart-quantity") {
-    document.querySelector(".js-cart-quantity").innerHTML = Quantity;
-  }
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+  return cartQuantity;
 }
 
 export function updateQuantity(productId, newQuantity) {
-  let matchingProductId;
-  cart.forEach((cartId) => {
-    if (productId === cartId.productId) {
-      matchingProductId = cartId;
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
     }
   });
-
-  matchingProductId.quantity = newQuantity;
+  matchingItem.quantity = newQuantity;
 
   saveToStorage();
 }
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
   let matchingItem;
+
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId) {
       matchingItem = cartItem;
