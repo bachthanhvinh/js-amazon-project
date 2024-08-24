@@ -543,3 +543,38 @@ export const products = [
 });
 
 // console.log(products);
+/*
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString());
+*/
+
+//this undefined
+/*
+console.log(this);
+
+const oject2 = {
+  a: 2,
+  b: this.a,
+};
+console.log(oject2);
+*/
+
+/*
+function LogThis() {
+  console.log(this);
+}
+LogThis();
+LogThis.call("hello");
+
+const object3 = {
+  method: () => {
+    console.log(this);
+    [1, 2, 3].forEach(function () {
+      console.log(this);
+    });
+  },
+};
+
+object3.method();
+*/
