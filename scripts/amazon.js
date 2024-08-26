@@ -1,4 +1,5 @@
 import { calculateCartQuantity, addToCart } from "../data/cart.js";
+// import { cart } from "../data/cart-class.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
 
