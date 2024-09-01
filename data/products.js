@@ -82,14 +82,13 @@ export function loadProduct(fun) {
       return new Product(productDetails);
     });
 
-    // console.log("load Product");
+    console.log("load Product");
     fun();
   });
-  xhr.open("GET", "https://supersimplebackend.dev/products");
+  xhr.open("GET", "https://supersimplebackend.dev/products", true);
   xhr.send();
 }
 
-loadProduct();
 // export const products = [
 //   {
 //     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
