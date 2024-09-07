@@ -6,6 +6,24 @@ import { loadCart } from "../data/cart.js";
 // import "../data/cart-class.js";
 // import "../data/backend-practice.js";
 
+const loadPage = async () => {
+  await loadProductsFetch();
+
+  const value = await new Promise((resolve) => {
+    loadProduct(() => {
+      resolve("value3");
+    });
+  });
+
+  console.log(value);
+
+  renderCheckoutHeader();
+  renderOrderSummary();
+  renderPaymentSummary();
+};
+
+loadPage();
+/*
 Promise.all([
   loadProductsFetch(),
   new Promise((resolve) => {
@@ -19,7 +37,7 @@ Promise.all([
   renderOrderSummary();
   renderPaymentSummary();
 });
-
+*/
 // new Promise((resolve) => {
 //   loadProduct(() => {
 //     resolve("value1");
