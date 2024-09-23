@@ -115,3 +115,16 @@ export function loadCart(fun) {
   xhr.open("GET", "https://supersimplebackend.dev/cart", true);
   xhr.send();
 }
+
+export async function loadCartFetch() {
+  const response = await fetch("https://supersimplebackend.dev/cart");
+
+  const text = await response.text();
+  console.log(text);
+  return text;
+}
+
+export function resetCart() {
+  cart = [];
+  saveToStorage();
+}

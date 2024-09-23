@@ -56,11 +56,12 @@ button {
 }
 
 .button-secondary:hover {
-  background-color: rgb(247, 250, 250);
+  background-color: rgb(178, 204, 204);
+  transition: 0.5s;
 }
 
 .button-secondary:active {
-  background-color: rgb(237, 253, 255);
+  background-color: rgb(178, 204, 204);
   box-shadow: none;
 }
 
