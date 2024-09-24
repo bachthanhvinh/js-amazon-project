@@ -157,3 +157,12 @@
 .added-to-cart-visible {
   opacity: 1;
 }
+.Size-clothing {
+  color: #000000;
+  text-decoration: none;
+  text-shadow: 0 8.36px 8.896px #c4b59d, 0 -2px 1px #fff;
+}
+.Size-clothing:hover {
+  color: #a46bc6;
+  text-decoration: none;
+}

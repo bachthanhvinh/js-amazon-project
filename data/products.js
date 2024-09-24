@@ -49,7 +49,10 @@ export class Clothing extends Product {
   extraInfoHTML() {
     // super.extraInfoHTML();
     return `
-       <a href="${this.sizeChartLink}" target="_blank">Size chart</a>
+    
+     <a class="Size-clothing"   href="${this.sizeChartLink}" target="_blank"    >Size chart</a>
+   
+    
     `;
   }
 }
@@ -64,8 +67,8 @@ export class Appliance extends Product {
   }
   extraInfoHTML() {
     return `
-  <a href="${this.instructionsLink}" target="_blank ">instructionsLink</a>
-     <a href="${this.warrantyLink}" target="_blank ">warrantyLink</a>
+  <a   href="${this.instructionsLink}" target="_blank ">instructionsLink</a>
+     <a    href="${this.warrantyLink}" target="_blank ">warrantyLink</a>
     `;
   }
 }
