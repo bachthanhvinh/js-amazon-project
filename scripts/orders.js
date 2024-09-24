@@ -63,7 +63,7 @@ async function loadPage() {
          
 
            <button class="buy-again-button button-primary js-buy-again 
-            data-product-id="${product.id}" ">
+             " data-product-id="${product.id}">
              <img class="buy-again-icon" src="images/icons/buy-again.png" />
              <span class="buy-again-message">Buy it again</span>
            </button>
@@ -87,7 +87,6 @@ async function loadPage() {
   document.querySelectorAll(".js-buy-again").forEach((button) => {
     button.addEventListener("click", () => {
       const { productId } = button.dataset;
-
       addToCart(productId);
 
       updateCartQuantity();
